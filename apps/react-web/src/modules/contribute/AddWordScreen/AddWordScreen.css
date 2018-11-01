@@ -1,0 +1,11 @@
+.AddWordScreen .columns {
+  margin-top: 1rem;
+}
+
+.AddWordScreen .main-left {
+  border-right: 4px solid #e74c3c;
+}
+
+.AddWordScreen .Article {
+  margin-top: 3.5rem;
+}

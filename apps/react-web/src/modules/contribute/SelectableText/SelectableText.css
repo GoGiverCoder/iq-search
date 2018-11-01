@@ -1,0 +1,12 @@
+.SelectableText .hover-actions .button {
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.SelectableText .hover-actions .button:hover {
+  opacity: 1;
+}
+
+.SelectableText .hover-actions {
+  position: relative;
+}

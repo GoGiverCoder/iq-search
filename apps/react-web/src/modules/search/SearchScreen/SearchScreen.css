@@ -1,0 +1,10 @@
+.SearchScreen .search-box {
+  justify-content: center;
+}
+.google {
+  border-left: 1px solid #f93860;
+}
+
+.SearchScreen .container {
+  flex: 1;
+}

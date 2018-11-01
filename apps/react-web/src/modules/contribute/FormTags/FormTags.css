@@ -1,0 +1,25 @@
+.FormTags .tag-input {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  width: auto;
+  height: auto;
+  padding: 0;
+  max-width: none;
+}
+
+.FormTags .tag-input::placeholder {
+  color: #989898;
+}
+
+.FormTags .tag-input:focus {
+  box-shadow: none
+}
+
+.FormTags ._footer {
+  margin-top: 10px;
+}
+
+#input_manual_tag {
+  min-width: 160px;
+}

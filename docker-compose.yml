@@ -1,0 +1,32 @@
+version: "2"
+
+services:
+  node:
+    container_name: iq-node-api
+    build: 
+      context: apps/node-api
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./apps/node-api:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3011:3001
+  react:
+    container_name: iq-react-dev
+    build: 
+      context: apps/react-web
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./apps/react-web:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3010:3000
+  # nginx:
+  #   container_name: iq-nginx-web
+  #   build: 
+  #     context: apps/react-web
+  #     dockerfile: docker/Dockerfile
+  #   volumes:
+  #     - ./apps/react-web/build:/usr/share/nginx/html
+  #   ports:
+  #     - 3010:80

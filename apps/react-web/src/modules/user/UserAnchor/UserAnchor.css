@@ -1,0 +1,18 @@
+.UserAnchor img {
+  border-radius: 100px;
+  display: inline-block;
+  height: 36px;
+  margin-right: 6px;
+  width: 36px;
+  vertical-align: middle !important;
+}
+.UserAnchor .info {
+  display: inline-block;
+  margin-right: 20px;
+}
+.UserAnchor {
+  padding: 15px 0 10px;
+}
+.LoginButton {
+  margin-top: 5px;
+}

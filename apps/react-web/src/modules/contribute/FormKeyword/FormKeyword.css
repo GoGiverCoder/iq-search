@@ -1,0 +1,21 @@
+.FormKeyword {
+  margin-bottom: 2rem;
+}
+
+.FormKeyword input {
+  background: transparent;
+  color: white;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-radius: 0;
+  border-color: #353c3d;
+}
+
+.FormKeyword input:focus {
+  box-shadow: none;
+}
+
+.FormKeyword input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}

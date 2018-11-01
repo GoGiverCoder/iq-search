@@ -1,0 +1,21 @@
+.Header .progress {
+  border-radius: 0;
+  transform: rotate(180deg)
+}
+
+.level {
+  padding: 10px 20px;
+  margin-bottom: 0 !important;
+}
+
+.Header .level-item {
+  flex: 1;
+}
+
+.Header .block-left {
+  justify-content: flex-start;
+}
+
+.Header .block-right {
+  justify-content: flex-end;
+}
