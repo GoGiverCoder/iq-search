@@ -1,8 +1,22 @@
-version: "2"
+version: '3'
 
 services:
+  mongo:
+    container_name: iq-mongo
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+    - 3012:27017
+    volumes:
+    - ./database/mongodb:/data/db
+
   node:
     container_name: iq-node-api
+    depends_on:
+      - mongo
     build: 
       context: apps/node-api
       dockerfile: docker/Dockerfile
@@ -11,8 +25,11 @@ services:
       - /usr/src/app/node_modules
     ports:
       - 3011:3001
+
   react:
     container_name: iq-react-dev
+    depends_on:
+      - node
     build: 
       context: apps/react-web
       dockerfile: docker/Dockerfile
@@ -21,6 +38,18 @@ services:
       - /usr/src/app/node_modules
     ports:
       - 3010:3000
+
+  mongo-express:
+    container_name: iq-mongo-express
+    image: mongo-express
+    restart: always
+    ports:
+      - 3013:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_EXPRESS_ADMIN}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_EXPRESS_ADMIN_PASSWORD}
+      ME_CONFIG_MONGODB_SERVER: mongo
+
   # nginx:
   #   container_name: iq-nginx-web
   #   build: 
@@ -30,3 +59,7 @@ services:
   #     - ./apps/react-web/build:/usr/share/nginx/html
   #   ports:
   #     - 3010:80
+
+volumes:
+  mongo:
+    driver: local
